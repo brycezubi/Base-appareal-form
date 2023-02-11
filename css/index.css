@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+:root {
+  --DesaturatedRed: hsl(0, 36%, 70%);
+  --SoftRed: hsl(0, 93%, 68%);
+  --DarkGrayishRed: hsl(0, 6%, 24%);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+main {
+  text-align: center;
+  width: calc(100% - 10%);
+  max-width: 120rem;
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+.logo {
+  width: 15rem;
+  float: left;
+  margin-bottom: 4rem;
+}
+
+.persona {
+  width: 100%;
+}
+
+.contact h1 {
+  text-transform: uppercase;
+  font-size: 5rem;
+  padding-top: 5rem;
+  color: var(--DarkGrayishRed);
+}
+
+.contact h1 span {
+  font-weight: 300;
+  color: var(--DesaturatedRed);
+}
+
+.contact p {
+  margin-block: 2.5rem;
+  max-width: 40rem;
+  margin-inline: auto;
+  color: var(--DesaturatedRed);
+  font-weight: 400;
+}
+
+.form {
+  max-width: 50rem;
+  margin-inline: auto;
+}
+
+.form__input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form__input button {
+  border: none;
+  background: linear-gradient(180deg , var(--SoftRed)10% , var(--DesaturatedRed) 80%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1.25rem 2.5rem;
+  border-radius: 2.5rem;
+  cursor: pointer;
+}
+
+.form__input button:hover {
+  opacity: .9;
+}
+
+.form__input input {
+  border: 1px solid var(--DesaturatedRed);
+  width: 100%;
+  padding: 1.5rem 2.5rem;
+  border-radius: 2.5rem;
+  outline: none;
+}
+
+.form__input input::placeholder {
+  color: var(--DesaturatedRed);
+  font-weight: 500;
+}
+
+.form__input small{
+  position: absolute;
+  bottom: -20px;
+  left: 25px;
+  color: var(--DesaturatedRed);
+  font-weight: 700;
+  opacity: 0;
+
+}
+
+.form__input .warning{
+  position: absolute;
+  bottom: 12px;
+  right: 80px;
+  opacity: 0;
+}
+
+.form__input.error small{
+  opacity: 1;
+}
+
+.form__input.error .warning{
+  opacity: 1;
+}
+.form__input.error input{
+  border : 1px solid red;
+}
+
+
+
+
+
+@media (min-width:1024px){
+  main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 8rem;
+  }
+
+  .logo{
+    grid-column: 1/2;
+    grid-row: 1/3;
+    justify-self: start;
+    align-self: start;
+  }
+  .persona{
+    height: 100%;
+    grid-row:  1 / 3;
+  }
+
+  .contact{
+    width: 100%;
+    grid-row: 1 /3;
+    grid-column: 1/2;
+    align-self: center;
+    text-align: left;
+  }
+
+  .contact h1{
+    font-size: 5.8rem;
+    padding: 0;
+    max-width: 40rem;
+  }
+
+  .contact p{
+    margin: 0;
+    padding: 4rem 0;
+  }
+  .form{
+    margin: 0;
+  }
+
+  .form__input{
+    max-width: 40rem;
+  }
+ 
+}
